@@ -9,7 +9,7 @@
   
   <parent>
     <groupId>io.pine.cloud</groupId>
-    <artifactId>pine-cloud-starter</artifactId>
+    <artifactId>pine-cloud-examples</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   
