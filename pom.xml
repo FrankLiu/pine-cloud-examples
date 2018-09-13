@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.pine.cloud</groupId>
+	<artifactId>pine-cloud-starter</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>pine-cloud-starter</name>
+	<description>ping-cloud-starter project based on Spring Cloud</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.15.RELEASE</version>
+	</parent>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<spring-boot-starter.version>1.5.15.RELEASE</spring-boot-starter.version>
+		<spring-boot-admin.version>1.5.7</spring-boot-admin.version>
+		<spring-cloud.version>Edgware.SR4</spring-cloud.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>pine-cloud-discovery-server</module>
+				<module>pine-cloud-config-server</module>
+				<module>pine-cloud-api-gateway</module>
+				<module>pine-cloud-auth-service</module>
+				<module>pine-cloud-user-service</module>
+				<module>pine-cloud-node-sidecar</module>
+				<module>nodejs-bff</module>
+				<module>pine-cloud-zipkin</module>
+				<module>pine-cloud-admin-server</module>
+			</modules>
+			<repositories>
+				<repository>
+					<id>spring-snapshots</id>
+					<name>Spring Snapshots</name>
+					<url>https://repo.spring.io/libs-snapshot-local</url>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>spring-milestones</id>
+					<name>Spring Milestones</name>
+					<url>https://repo.spring.io/libs-milestone-local</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>spring-releases</id>
+					<name>Spring Releases</name>
+					<url>https://repo.spring.io/release</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>spring-snapshots</id>
+					<name>Spring Snapshots</name>
+					<url>https://repo.spring.io/libs-snapshot-local</url>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>spring-milestones</id>
+					<name>Spring Milestones</name>
+					<url>https://repo.spring.io/libs-milestone-local</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>spring-releases</id>
+					<name>Spring Releases</name>
+					<url>https://repo.spring.io/release</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+
+</project>

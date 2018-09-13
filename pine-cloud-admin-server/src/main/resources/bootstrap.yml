@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: pine-cloud-admin-server
+
