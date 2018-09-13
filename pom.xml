@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.pine.cloud</groupId>
-	<artifactId>pine-cloud-starter</artifactId>
+	<artifactId>pine-cloud-examples</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>pine-cloud-starter</name>
-	<description>ping-cloud-starter project based on Spring Cloud</description>
+	<name>pine-cloud-examples</name>
+	<description>ping-cloud-examples project based on Spring Cloud</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -61,8 +61,9 @@
 				<module>pine-cloud-config-server</module>
 				<module>pine-cloud-api-gateway</module>
 				<module>pine-cloud-auth-service</module>
-				<module>pine-cloud-user-service</module>
+				<module>pine-cloud-computer-service</module>
 				<module>pine-cloud-node-sidecar</module>
+				<module>pine-cloud-nodejs-service</module>
 				<module>nodejs-bff</module>
 				<module>pine-cloud-zipkin</module>
 				<module>pine-cloud-admin-server</module>
