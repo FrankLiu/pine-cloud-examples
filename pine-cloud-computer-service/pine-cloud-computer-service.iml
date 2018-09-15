@@ -142,6 +142,7 @@
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-commons:2.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.0.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.46" level="project" />
+    <orderEntry type="library" name="Maven: com.h2database:h2:1.4.197" level="project" />
     <orderEntry type="library" name="Maven: io.reactivex:rxjava:1.2.9" level="project" />
     <orderEntry type="library" name="Maven: de.codecentric:spring-boot-admin-starter-client:2.0.2" level="project" />
     <orderEntry type="library" name="Maven: de.codecentric:spring-boot-admin-client:2.0.2" level="project" />

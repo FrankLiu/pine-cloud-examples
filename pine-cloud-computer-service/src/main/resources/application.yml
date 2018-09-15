@@ -13,12 +13,19 @@ spring:
       profile: dev
       label: master
       uri: http://localhost:7001/
+  # datasource:
+    # url: jdbc:mysql://10.200.131.8:3306/test?characterEncoding=utf-8&useSSL=false
+    # username: root
+    # password: XpPFasx15UdKszmQ8f6R
+    # driver-class-name: com.mysql.jdbc.Driver
   datasource:
-    url: jdbc:mysql://10.200.131.8:3306/test?characterEncoding=utf-8&useSSL=false
-    username: root
-    password: XpPFasx15UdKszmQ8f6R
-    driver-class-name: com.mysql.jdbc.Driver
+      platform: h2
+      url: jdbc:h2:mem:computedb;MODE=MYSQL;DB_CLOSE_DELAY=-1
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
   jpa:
+    show-sql: true
     properties:
       hibernate:
         hbm2ddl:

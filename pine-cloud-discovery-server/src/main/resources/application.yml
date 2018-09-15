@@ -1,0 +1,25 @@
+server:
+  port: 1111
+
+spring:
+  application:
+    name: pine-cloud-discovery-server
+  cloud:
+    config:
+      uri: http://localhost:7001
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:1111}/eureka/
+
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-server:8888

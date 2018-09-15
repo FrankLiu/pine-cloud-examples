@@ -6,12 +6,9 @@ spring:
     name: pine-cloud-config-server
   cloud:
     config:
-      git:
-        uri: https://github.com/frankliu/pine-cloud-examples
-        searchPaths: config-repo
-        username: mocker
-        password: mockpwd
-        basedir: target/config
+      server:
+        git:
+          uri: ./config-repo
 
 eureka:
   instance:
