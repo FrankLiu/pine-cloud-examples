@@ -4,11 +4,13 @@ server:
 spring:
   application:
     name: pine-cloud-config-server
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: ./config-repo
+        native:
+          searchLocations: classpath:/config-repo
 
 eureka:
   instance:
