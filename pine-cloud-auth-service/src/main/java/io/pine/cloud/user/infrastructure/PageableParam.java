@@ -1,6 +1,7 @@
-package org.pine.cloud.user.infrastructure;
+package io.pine.cloud.user.infrastructure;
 
-import org.pine.cloud.user.domain.User;
+
+import io.pine.cloud.user.domain.User;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;
 

@@ -1,4 +1,4 @@
-package org.pine.cloud.user.domain;
+package io.pine.cloud.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

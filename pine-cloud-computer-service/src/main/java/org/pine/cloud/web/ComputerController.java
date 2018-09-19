@@ -1,4 +1,4 @@
-package org.pine.cloud.user.web;
+package org.pine.cloud.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

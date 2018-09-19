@@ -1,4 +1,4 @@
-package org.pine.cloud.user.domain;
+package io.pine.cloud.user.domain;
 
 import javax.persistence.*;
 
@@ -17,7 +17,7 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String mobile;
 
     @Column(nullable = false)

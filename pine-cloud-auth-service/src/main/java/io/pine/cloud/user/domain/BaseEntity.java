@@ -1,4 +1,4 @@
-package org.pine.cloud.user.domain;
+package io.pine.cloud.user.domain;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;

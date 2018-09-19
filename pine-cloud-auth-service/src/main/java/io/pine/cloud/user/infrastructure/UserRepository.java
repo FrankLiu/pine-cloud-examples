@@ -1,9 +1,8 @@
-package org.pine.cloud.user.infrastructure;
+package io.pine.cloud.user.infrastructure;
 
-import org.pine.cloud.user.domain.User;
+import io.pine.cloud.user.domain.User;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -17,7 +16,7 @@ import java.util.List;
  * @sinace 2017/11/30 0030.
  */
 @Repository
-public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
+public interface UserRepository extends JpaRepository<User, Long> {
     User findByName(String name);
 
     User findByNameAndAge(String name, Integer age);

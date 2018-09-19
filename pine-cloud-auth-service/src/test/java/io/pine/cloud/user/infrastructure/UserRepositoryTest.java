@@ -1,20 +1,29 @@
-package org.pine.cloud.user.infrastructure.service;
+package io.pine.cloud.user.infrastructure;
 
+import io.pine.cloud.user.domain.User;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.pine.cloud.user.domain.User;
-import org.pine.cloud.user.infrastructure.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Repository;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * Unit test for simple App.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-public class ApplicationTests {
+@RunWith(SpringRunner.class)
+@DataJpaTest(includeFilters = @ComponentScan.Filter(Repository.class))
+public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
+
+    @After
+    public void teardown() {
+        userRepository.deleteAll();
+    }
 
     @Test
     public void test() throws Exception {
