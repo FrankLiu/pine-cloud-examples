@@ -20,7 +20,7 @@ public class ComputerController {
 
 	@GetMapping("/add")
 	public Integer add(@RequestParam Integer a, @RequestParam Integer b){
-		ServiceInstance instance = client.getInstances("compute-service-service").get(0);
+		ServiceInstance instance = client.getInstances("compute-service").get(0);
 		Integer r = a + b;
 		logger.info("/add, host: {}, service_id: {}, service_name: {}, result: {}", instance.getHost(), instance.getServiceId(), serviceName, r);
 		return r;
