@@ -21,10 +21,17 @@ module.exports = {
       name: 'MyOwn',
     },
   },
+  requestMiddleware: (requestOpts, done) => {
+      requestOpts.auth = {
+        user: 'admin',
+        password: '123456',
+      };
+      done(requestOpts);
+  },
   eureka: {
     fetchRegistry: true,
-    host: 'localhost',
-    port: 1111,
+    host: '10.200.151.6',
+    port: 3000,
     servicePath: '/eureka/apps/',
     ssl: false,
     useDns: false,

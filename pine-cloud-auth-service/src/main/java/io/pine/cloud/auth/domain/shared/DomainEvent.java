@@ -1,4 +1,4 @@
-package io.pine.cloud.user.domain.shared;
+package io.pine.cloud.auth.domain.shared;
 
 /**
  * A domain event is something that is unique, but does not have a lifecycle.

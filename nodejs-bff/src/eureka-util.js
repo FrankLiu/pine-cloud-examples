@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = {
-    computeVipAdress: "compute-service",
+//    computeVipAdress: "compute-service",
+    computeVipAdress: "funds-ecard-rest",
     bookVipAdress: "book-service",
     getComputeRootUrl: function (client) {
         return this.getRootUrlByVipAdress(client, this.computeVipAdress);

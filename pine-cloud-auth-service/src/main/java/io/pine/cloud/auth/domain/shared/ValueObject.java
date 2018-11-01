@@ -1,4 +1,4 @@
-package io.pine.cloud.user.domain.shared;
+package io.pine.cloud.auth.domain.shared;
 
 /**
  *

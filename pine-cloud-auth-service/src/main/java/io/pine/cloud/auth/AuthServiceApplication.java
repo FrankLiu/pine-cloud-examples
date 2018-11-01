@@ -1,4 +1,4 @@
-package io.pine.cloud;
+package io.pine.cloud.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

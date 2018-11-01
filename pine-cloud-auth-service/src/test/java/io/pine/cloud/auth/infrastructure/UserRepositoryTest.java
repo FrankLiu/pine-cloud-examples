@@ -1,6 +1,7 @@
-package io.pine.cloud.user.infrastructure;
+package io.pine.cloud.auth.infrastructure;
 
-import io.pine.cloud.user.domain.User;
+import io.pine.cloud.auth.domain.User;
+import io.pine.cloud.auth.infrastructure.UserRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package io.pine.cloud.auth;
+package io.pine.cloud.auth.util;
 
 /**
  * @author Administrator
