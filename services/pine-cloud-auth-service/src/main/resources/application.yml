@@ -1,0 +1,49 @@
+server:
+  port: 3333
+
+spring:
+  application:
+    name: auth-service
+  boot:
+    admin:
+      client:
+        url: http://localhost:8088
+  cloud:
+    config:
+      profile: dev
+      uri: http://localhost:7001/
+  # datasource:
+    # url: jdbc:mysql://10.200.131.8:3306/test?characterEncoding=utf-8&useSSL=false
+    # username: root
+    # password: XpPFasx15UdKszmQ8f6R
+    # driver-class-name: com.mysql.jdbc.Driver
+  datasource:
+      platform: h2
+      url: jdbc:h2:mem:computedb;MODE=MYSQL;DB_CLOSE_DELAY=-1
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: create-drop
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:1111}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

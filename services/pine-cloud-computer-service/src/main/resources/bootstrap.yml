@@ -1,0 +1,10 @@
+server:
+  port: 2223
+
+spring:
+  application:
+    name: compute-service
+  cloud:
+    config:
+      profile: dev
+      uri: http://localhost:7001/
