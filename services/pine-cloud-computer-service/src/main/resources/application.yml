@@ -1,4 +1,9 @@
+server:
+  port: 2222
+
 spring:
+  application:
+    name: compute-service
   boot:
     admin:
       client:
@@ -22,12 +27,15 @@ spring:
           auto: create-drop
 
   cloud:
-    consul:
-      host: 10.200.131.8
-      port: 8500
-      discovery:
-        #注册到consul的服务名称
-        serviceName: computer-service
+    config:
+      profile: dev
+#  cloud:
+#    consul:
+#      host: 10.200.131.8
+#      port: 8500
+#      discovery:
+#        #注册到consul的服务名称
+#        serviceName: computer-service
 
 management:
   endpoints:

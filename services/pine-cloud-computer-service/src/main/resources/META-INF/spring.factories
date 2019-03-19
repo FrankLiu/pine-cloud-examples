@@ -1,0 +1,5 @@
+org.springframework.context.ApplicationContextInitializer=\
+org.pine.cloud.computer.listener.HelloApplicationContextInitializer
+
+org.springframework.boot.SpringApplicationRunListener=\
+org.pine.cloud.computer.listener.HelloSpringApplicationRunListener

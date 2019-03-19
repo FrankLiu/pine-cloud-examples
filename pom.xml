@@ -25,6 +25,8 @@
 		<module>services/pine-cloud-computer-service</module>
 		<module>services/pine-cloud-node-sidecar</module>
 		<module>services/pine-cloud-nodejs-service</module>
+		<module>services/user-service</module>
+		<module>services/payment-service</module>
 		<module>apps/nodejs-bff</module>
 		<module>apps/pine-cloud-api-gateway</module>
 	</modules>
@@ -33,12 +35,58 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- spring boot & cloud -->
 		<spring-boot-starter.version>2.1.3.RELEASE</spring-boot-starter.version>
 		<spring-boot-admin.version>2.1.2</spring-boot-admin.version>
 		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
 		<spring-cloud-netflix.version>2.1.0.RELEASE</spring-cloud-netflix.version>
 		<spring-cloud-alibaba.version>0.2.1.RELEASE</spring-cloud-alibaba.version>
+		<lombok.version>1.18.6</lombok.version>
+		<commons-lang3.version>3.7</commons-lang3.version>
+		<guava.version>24.1-jre</guava.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<mysql-connector.version>8.0.15</mysql-connector.version>
+		<h2.version>1.4.197</h2.version>
+		<swagger.version>2.9.2</swagger.version>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.slf4j</groupId>-->
+			<!--<artifactId>slf4j-log4j12</artifactId>-->
+			<!--<version>${slf4j.version}</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
