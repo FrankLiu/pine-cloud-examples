@@ -4,6 +4,7 @@ const express = require('express');
 const rp = require('request-promise');
 const app = express();
 const Eureka = require('eureka-js-client').Eureka;
+const circuitBreaker = require('opossum');
 const eurekaUtil = require('./eureka-util');
 const eurekaConf = require('./config/eureka');
 
@@ -54,7 +55,6 @@ app.get('/health',function(req, res){
 app.listen(4001, function () {
     console.log('Node-BFF Service app listening on port 4001!')
 });
-
 
 
 
