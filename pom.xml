@@ -27,6 +27,7 @@
 		<module>services/pine-cloud-nodejs-service</module>
 		<module>services/user-service</module>
 		<module>services/payment-service</module>
+		<module>services/ecard-service</module>
 		<module>apps/nodejs-bff</module>
 		<module>apps/pine-cloud-api-gateway</module>
 	</modules>
