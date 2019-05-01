@@ -21,10 +21,10 @@
 		<module>infrastructure/pine-cloud-admin-server</module>
 		<module>infrastructure/pine-cloud-zipkin</module>
 		<module>infrastructure/pine-cloud-admin-server</module>
-		<module>services/pine-cloud-auth-service</module>
-		<module>services/pine-cloud-computer-service</module>
-		<module>services/pine-cloud-node-sidecar</module>
-		<module>services/pine-cloud-nodejs-service</module>
+		<module>services/auth-service</module>
+		<module>services/computer-service</module>
+		<module>services/nodejs-service-sidecar</module>
+		<module>services/nodejs-service</module>
 		<module>services/user-service</module>
 		<module>services/payment-service</module>
 		<module>services/ecard-service</module>
