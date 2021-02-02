@@ -47,7 +47,7 @@
 		<spring-boot-starter.version>2.4.2</spring-boot-starter.version>
 		<spring-boot-admin.version>2.1.2</spring-boot-admin.version>
 		<spring-cloud.version>2020.0.1</spring-cloud.version>
-		<spring-cloud-netflix.version>2.1.0.RELEASE</spring-cloud-netflix.version>
+		<spring-cloud-netflix.version>3.0.1</spring-cloud-netflix.version>
 		<spring-clout-sleuth.version>2.2.5.RELEASE</spring-clout-sleuth.version>
 
 		<!-- common libs -->

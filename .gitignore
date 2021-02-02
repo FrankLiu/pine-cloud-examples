@@ -1,9 +1,16 @@
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+
 .idea
 node_modules
 npm-debug.log
-target/*
+target
 *.log
 */build/*
 */.gradle/*
 */.idea/*
+
 
