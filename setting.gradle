@@ -1,0 +1,19 @@
+rootProject.name = 'pine-cloud-examples'
+
+include 'infrastructure/pine-discovery-service'
+include 'infrastructure/pine-cloud-config-server'
+include 'infrastructure/pine-cloud-zipkin'
+include 'infrastructure/pine-cloud-admin-server'
+
+include 'services/auth-service'
+include 'services/computer-service'
+include 'services/nodejs-service-sidecar'
+include 'services/nodejs-service'
+include 'services/user-service'
+include 'services/auth-service'
+include 'services/payment-service'
+include 'services/ecard-service'
+
+include 'apps/nodejs-bff'
+include 'apps/pine-cloud-api-gateway'
+
