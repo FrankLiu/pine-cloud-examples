@@ -17,10 +17,10 @@ docker run -d -p 9411:9411 openzipkin/zipkin
 #### 启动pine-cloud-discovery-server
 运行子工程下的DiscoveryServerApplication类
 
-#### 启动ping-cloud-user-service(compute-service)
+#### 启动pine-cloud-user-service(compute-service)
 运行子工程下的UserServiceApplication类
 
-#### 启动ping-cloud-nodejs-service(book-service)
+#### 启动pine-cloud-nodejs-service(book-service)
 ```shell
 cd pine-cloud-nodejs-service/src
 npm install --save express eureka-js-client

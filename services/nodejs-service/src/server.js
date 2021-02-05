@@ -42,7 +42,7 @@ const client = new Eureka({
   eureka: {
     fetchRegistry: false,
     host: 'localhost',
-    port: 1111,
+    port: 8761,
     servicePath: '/eureka/apps/'
   },
 });

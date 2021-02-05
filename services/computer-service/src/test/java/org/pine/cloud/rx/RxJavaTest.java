@@ -1,9 +1,9 @@
 package org.pine.cloud.rx;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import rx.Observable;
 import rx.Subscriber;
 import rx.schedulers.Schedulers;
@@ -25,13 +25,13 @@ public class RxJavaTest {
     private long startTime;
     private long endTime;
 
-    @Before
+    @BeforeEach
     public void setup(){
         System.out.println("test start at: " + Instant.now());
         startTime = System.currentTimeMillis();
     }
 
-    @After
+    @AfterEach
     public void teardown() {
         endTime = System.currentTimeMillis();
         System.out.println("test end at: " + Instant.now());

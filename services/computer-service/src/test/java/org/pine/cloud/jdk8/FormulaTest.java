@@ -1,7 +1,8 @@
 package org.pine.cloud.jdk8;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author liujun
@@ -17,7 +18,7 @@ public class FormulaTest {
             }
         };
 
-        Assert.assertTrue(100 == f.calculate(100));
-        Assert.assertTrue(4 == f.sqrt(16));
+        Assertions.assertTrue(100 == f.calculate(100));
+        Assertions.assertTrue(4 == f.sqrt(16));
     }
 }

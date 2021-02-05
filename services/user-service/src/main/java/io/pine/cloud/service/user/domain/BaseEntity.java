@@ -22,7 +22,7 @@ public class BaseEntity {
     @Column(columnDefinition = "varchar(64) comment '记录创建者'")
     private String createdBy;
 
-//    @CreatedDate
+    @CreatedDate
     @Column(columnDefinition = "datetime not null default CURRENT_TIMESTAMP comment '记录创建时间'")
     private Date createdAt;
 
@@ -31,7 +31,7 @@ public class BaseEntity {
     @Column(columnDefinition = "varchar(64) comment '记录最后更新者'")
     private String updatedBy;
 
-//    @LastModifiedDate
+    @LastModifiedDate
     @Column(columnDefinition = "datetime not null default CURRENT_TIMESTAMP comment '记录最后更新时间'")
     private Date updatedAt;
 }
