@@ -5,6 +5,8 @@ import io.pine.cloud.service.user.domain.User;
 import io.pine.cloud.service.user.interfaces.vo.Resp;
 import io.pine.cloud.service.user.interfaces.vo.UserVo;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
+    private final static Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     private UserService userService;
 
@@ -19,11 +23,8 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "/users", method = RequestMethod.POST)
     public Resp<User> newUser(@ModelAttribute(name = "user") UserVo userVo) {
-        User user = new User();
-        user.setName(userVo.getUsername());
-        user.setPassword(userVo.getPasswd());
-        user.setAge(userVo.getAge());
-        user.setEmail(userVo.getEmail());
+        logger.info("create new user: {}", userVo);
+        User user = User.of(userVo.getUsername(), userVo.getPasswd(), userVo.getAge(), userVo.getEmail());
         return Resp.success( "SUCCESS", userService.createUser(user));
     }
 
@@ -31,6 +32,7 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "/users", method=RequestMethod.GET)
     public Page<User> getUsers(Pageable pageable){
+        logger.info("find users: {}", pageable);
         return userService.findUsers(pageable);
     }
 }

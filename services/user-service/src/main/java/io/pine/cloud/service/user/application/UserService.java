@@ -25,7 +25,7 @@ public class UserService {
     private UserRepository userRepository;
 
     @Autowired
-    private ApplicationEventPublisher eventPublisher;
+    private ApplicationEventPublisher applicationEventPublisher;
 
     private final static Logger logger = LoggerFactory.getLogger(UserService.class);
 
@@ -75,7 +75,7 @@ public class UserService {
         userRepository.save(user);
 
         // 发送事件
-        eventPublisher.publishEvent(new UserCreatedEvent(user));
+        applicationEventPublisher.publishEvent(new UserCreatedEvent(user));
 
         return user;
     }
@@ -92,7 +92,7 @@ public class UserService {
         userRepository.save(user);
 
         // 发送事件
-        eventPublisher.publishEvent(new UserUpdatedEvent(user));
+        applicationEventPublisher.publishEvent(new UserUpdatedEvent(user));
         // 返回结果
         return user;
     }
@@ -116,7 +116,7 @@ public class UserService {
         userRepository.save(user);
 
         // 发送事件
-        eventPublisher.publishEvent(new UserDeletedEvent(user));
+        applicationEventPublisher.publishEvent(new UserDeletedEvent(user));
 
         // 返回结果
         return user;

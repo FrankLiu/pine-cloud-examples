@@ -32,6 +32,6 @@ public class BaseEntity {
     private String updatedBy;
 
     @LastModifiedDate
-    @Column(columnDefinition = "datetime not null default CURRENT_TIMESTAMP comment '记录最后更新时间'")
+    @Column(columnDefinition = "datetime not null default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '记录最后更新时间'")
     private Date updatedAt;
 }
