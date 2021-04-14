@@ -1,8 +1,8 @@
 package io.pine.cloud.service.user.infrastructure.messaging;
 
-import io.pine.cloud.service.user.domain.UserCreatedEvent;
-import io.pine.cloud.service.user.domain.UserDeletedEvent;
-import io.pine.cloud.service.user.domain.UserUpdatedEvent;
+import io.pine.cloud.service.user.domain.event.UserCreatedEvent;
+import io.pine.cloud.service.user.domain.event.UserDeletedEvent;
+import io.pine.cloud.service.user.domain.event.UserUpdatedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEvent;

@@ -56,11 +56,18 @@
 		<slf4j.version>1.7.25</slf4j.version>
 		<swagger.version>2.9.2</swagger.version>
 
+		<!-- json -->
+		<fastjson.version>1.2.56</fastjson.version>
+
 		<!-- jdbc -->
 		<mysql-connector.version>8.0.15</mysql-connector.version>
 		<h2.version>1.4.197</h2.version>
-		<jwt.version>3.2.0</jwt.version>
 
+		<!-- security -->
+		<jwt.version>3.2.0</jwt.version>
+		<jcasbin.version>1.6.3</jcasbin.version>
+		<jcasbin-jdbc.version>2.0.2</jcasbin-jdbc.version>
+		<jcasbin-boot.version>0.0.11</jcasbin-boot.version>
 	</properties>
 
 	<dependencyManagement>
@@ -124,11 +131,33 @@
 				<version>${swagger.version}</version>
 			</dependency>
 
+			<!-- json -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
 			<!-- security -->
 			<dependency>
 				<groupId>com.auth0</groupId>
 				<artifactId>java-jwt</artifactId>
 				<version>${jwt.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.casbin</groupId>
+				<artifactId>jcasbin</artifactId>
+				<version>${jcasbin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.casbin</groupId>
+				<artifactId>jdbc-adapter</artifactId>
+				<version>${jcasbin-jdbc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.casbin</groupId>
+				<artifactId>casbin-spring-boot-starter</artifactId>
+				<version>${jcasbin-boot.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

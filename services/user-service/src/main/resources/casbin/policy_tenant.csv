@@ -1,0 +1,15 @@
+p, superAdmin, gy, project, read
+p, superAdmin, gy, project, write
+p, superAdmin, jn, project, read
+p, superAdmin, jn, project, write
+p, admin, gy, project, read
+p, admin, gy, project, write
+p, admin, jn, asse, read
+p, admin, jn, asse, write
+p, zhuangjia, jn, project, write
+p, zhuangjia, gy, asse, write
+
+g, quyuan, admin, gy
+g, quyuan, admin, jn
+g, wenyin, zhuangjia, gy
+g, shangshang, zhuangjia, jn

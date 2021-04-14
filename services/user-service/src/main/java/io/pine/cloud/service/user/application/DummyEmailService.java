@@ -1,7 +1,7 @@
 package io.pine.cloud.service.user.application;
 
 import io.pine.cloud.service.user.domain.User;
-import io.pine.cloud.service.user.domain.UserCreatedEvent;
+import io.pine.cloud.service.user.domain.event.UserCreatedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
