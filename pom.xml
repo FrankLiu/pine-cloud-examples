@@ -55,6 +55,7 @@
 		<guava.version>27.1-jre</guava.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<swagger.version>2.9.2</swagger.version>
+		<easyddd.version>1.0.5-SNAPSHOT</easyddd.version>
 
 		<!-- json -->
 		<fastjson.version>1.2.56</fastjson.version>
@@ -67,7 +68,7 @@
 		<jwt.version>3.2.0</jwt.version>
 		<jcasbin.version>1.6.3</jcasbin.version>
 		<jcasbin-jdbc.version>2.0.2</jcasbin-jdbc.version>
-		<jcasbin-boot.version>0.0.11</jcasbin-boot.version>
+		<jcasbin-boot.version>0.0.12</jcasbin-boot.version>
 	</properties>
 
 	<dependencyManagement>
@@ -90,6 +91,13 @@
 				<groupId>de.codecentric</groupId>
 				<artifactId>spring-boot-admin-dependencies</artifactId>
 				<version>${spring-boot-admin.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pinenutt</groupId>
+				<artifactId>easyddd</artifactId>
+				<version>${easyddd.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -129,6 +137,11 @@
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger-ui</artifactId>
 				<version>${swagger.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pinenutt</groupId>
+				<artifactId>easyddd-core</artifactId>
+				<version>${easyddd.version}</version>
 			</dependency>
 
 			<!-- json -->

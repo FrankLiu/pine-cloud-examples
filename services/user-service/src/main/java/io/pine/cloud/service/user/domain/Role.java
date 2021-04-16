@@ -33,10 +33,10 @@ public class Role extends DeletableEntity {
     @ElementCollection(targetClass = Permission.class, fetch = FetchType.EAGER)
     @CollectionTable(
             name = "p_role_permission",
-            uniqueConstraints = @UniqueConstraint(columnNames = {"role_name", "permission_name"}),
+            uniqueConstraints = @UniqueConstraint(columnNames = {"role_name", "perm"}),
             joinColumns = {
                     @JoinColumn(name = "role_name", referencedColumnName = "name"),
-                    @JoinColumn(name = "permission", referencedColumnName = "name")
+                    @JoinColumn(name = "perm", referencedColumnName = "name")
             }
     )
     private Set<Permission> permissions = new HashSet<>();

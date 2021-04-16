@@ -1,8 +1,8 @@
 package io.pine.cloud.service.user.interfaces;
 
+import com.pinenutt.easyddd.domain.dto.Resp;
 import io.pine.cloud.service.user.application.UserService;
 import io.pine.cloud.service.user.domain.User;
-import io.pine.cloud.service.user.interfaces.vo.Resp;
 import io.pine.cloud.service.user.interfaces.vo.UserVo;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;

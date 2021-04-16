@@ -17,11 +17,11 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class User extends DeletableEntity {
-    @Column(name = "username", unique = true, length = 30, nullable = false, columnDefinition = "varchar(30) not null default '' comment '用户名'")
+    @Column(unique = true, length = 30, nullable = false, columnDefinition = "varchar(30) not null default '' comment '用户名'")
     private String name;
 
     @JsonIgnore
-    @Column(name = "password", length = 64, nullable = false, columnDefinition = "varchar(64) not null default '' comment '用户密码'")
+    @Column(length = 64, nullable = false, columnDefinition = "varchar(64) not null default '' comment '用户密码'")
     private String password;
 
     @Column(columnDefinition = "smallint comment '用户年龄'")
@@ -35,7 +35,7 @@ public class User extends DeletableEntity {
             name = "p_user_role",
             uniqueConstraints = @UniqueConstraint(columnNames = {"user_name", "role_name"}),
             joinColumns = {
-                    @JoinColumn(name = "user_name", referencedColumnName = "username"),
+                    @JoinColumn(name = "user_name", referencedColumnName = "name"),
                     @JoinColumn(name = "role_name", referencedColumnName = "name")
             }
     )

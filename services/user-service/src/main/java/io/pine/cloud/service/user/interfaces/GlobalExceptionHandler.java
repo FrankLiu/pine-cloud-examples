@@ -1,6 +1,7 @@
 package io.pine.cloud.service.user.interfaces;
 
-import io.pine.cloud.service.user.interfaces.vo.Resp;
+import com.pinenutt.easyddd.domain.dto.Resp;
+import com.pinenutt.easyddd.domain.dto.StatusCode;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,6 +16,6 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(value = Exception.class)
 	@ResponseBody
 	public Resp<String> defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
-		return Resp.fail(500, e.getMessage(), "Internal Error");
+		return Resp.fail(StatusCode.INTERNAL_SERVER_ERROR, e.getMessage());
 	}
 }

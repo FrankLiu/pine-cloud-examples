@@ -9,5 +9,8 @@ p, zhuangjia, asse, write
 p, shangshang, project, read
 p, shangshang, asse, read
 
+g, admin, admin
 g, quyuan, admin
 g, wenyin, zhuangjia
+g, wenyin, shangshang
+

@@ -1,10 +1,12 @@
 package io.pine.cloud.service.user;
 
 import io.pine.cloud.service.user.domain.jcasbin.Policy;
-import org.casbin.adapter.JDBCAdapter;
+import org.casbin.adapter.JdbcAdapter;
 import org.casbin.jcasbin.main.Enforcer;
+import org.casbin.spring.boot.autoconfigure.properties.CasbinExceptionProperties;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * Class Description to be replaced
@@ -17,19 +19,15 @@ public class EnforcerFactory implements InitializingBean {
     private static Enforcer enforcer;
 
     @Autowired
-    private EnforcerConfigProperties enforcerConfigProperties;
-    private static EnforcerConfigProperties config;
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        config = enforcerConfigProperties;
         //从数据库读取策略
-        JDBCAdapter jdbcAdapter = new JDBCAdapter(
-                config.getDriverClassName(),
-                config.getUrl(),
-                config.getUsername(),
-                config.getPassword());
-        enforcer = new Enforcer(config.getModelPath(), jdbcAdapter);
+        CasbinExceptionProperties exceptionProperties = new CasbinExceptionProperties();
+        JdbcAdapter jdbcAdapter = new JdbcAdapter(jdbcTemplate, exceptionProperties, true);
+
+        enforcer = new Enforcer("classpath:/casbin/model.conf", jdbcAdapter);
         enforcer.loadPolicy();//Load the policy from DB.
     }
 

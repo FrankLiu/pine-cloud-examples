@@ -5,6 +5,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.casbin.jcasbin.main.Enforcer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
@@ -29,7 +30,8 @@ public class JCasbinAuthzFilter implements Filter {
 
     private static final Logger log = LoggerFactory.getLogger(JCasbinAuthzFilter.class);
 
-    private static Enforcer enforcer;
+    @Autowired
+    private Enforcer enforcer;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

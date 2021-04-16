@@ -19,7 +19,7 @@ public class BaseEntity {
 
     @JsonIgnore
     @CreatedBy
-    @Column(columnDefinition = "varchar(64) comment '记录创建者'")
+    @Column(columnDefinition = "varchar(32) comment '记录创建者'")
     private String createdBy;
 
     @CreatedDate
@@ -28,7 +28,7 @@ public class BaseEntity {
 
     @JsonIgnore
     @LastModifiedBy
-    @Column(columnDefinition = "varchar(64) comment '记录最后更新者'")
+    @Column(columnDefinition = "varchar(32) comment '记录最后更新者'")
     private String updatedBy;
 
     @LastModifiedDate
