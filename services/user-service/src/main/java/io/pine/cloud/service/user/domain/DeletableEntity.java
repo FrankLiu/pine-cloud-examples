@@ -12,4 +12,8 @@ public class DeletableEntity extends BaseEntity{
     @JsonIgnore
     @Column(name = "del_flag", columnDefinition = "bit not null default 0 comment '删除标识（1 已删除 0 未删除）'")
     private Boolean delFlag;
+
+    protected DeletableEntity() {
+        setDelFlag(false);
+    }
 }

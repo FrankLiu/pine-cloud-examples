@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,22 +23,28 @@ import java.util.Set;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Role extends DeletableEntity {
-    @Column(name = "name", unique = true, length = 30, columnDefinition = "varchar(30) not null default '' comment '角色名称'")
+    @Column(name = "name", unique = true, nullable = false, length = 30, columnDefinition = "varchar(30) not null default '' comment '角色名称'")
     private String name;
 
-    @Column(columnDefinition = "varchar(100) not null default '' comment '角色描述'")
+    @Column(length = 100, nullable = true, columnDefinition = "varchar(100) default '' comment '角色描述'")
     private String description;
 
-    @ElementCollection(targetClass = Permission.class, fetch = FetchType.EAGER)
-    @CollectionTable(
+    @ManyToMany(fetch = FetchType.LAZY, targetEntity = Permission.class)
+    @JoinTable(
             name = "p_role_permission",
-            uniqueConstraints = @UniqueConstraint(columnNames = {"role_name", "perm"}),
+            uniqueConstraints = @UniqueConstraint(columnNames = {"role_id", "permission_id"}),
             joinColumns = {
-                    @JoinColumn(name = "role_name", referencedColumnName = "name"),
-                    @JoinColumn(name = "perm", referencedColumnName = "name")
+                    @JoinColumn(name = "role_id", referencedColumnName = "id")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "permission_id", referencedColumnName = "id")
             }
     )
     private Set<Permission> permissions = new HashSet<>();
+
+    public Role(String name) {
+        setName(name);
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -2,6 +2,7 @@ package io.pine.cloud.service.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Objects;
+import com.pinenutt.easyddd.util.Dates;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,27 +31,32 @@ public class User extends DeletableEntity {
     @Column(columnDefinition = "varchar(32) comment '用户邮箱'")
     private String email;
 
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(
+    @ManyToMany(fetch = FetchType.EAGER, targetEntity = Role.class)
+    @JoinTable(
             name = "p_user_role",
-            uniqueConstraints = @UniqueConstraint(columnNames = {"user_name", "role_name"}),
+            uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "role_id"}),
             joinColumns = {
-                    @JoinColumn(name = "user_name", referencedColumnName = "name"),
-                    @JoinColumn(name = "role_name", referencedColumnName = "name")
+                    @JoinColumn(name = "user_id", referencedColumnName = "id")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "role_id", referencedColumnName = "id")
             }
     )
-    private Set<UserRole> userRoles = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();
 
     private User(String name, String password, int age, String email) {
         this.name = name;
         this.password = password;
         this.age = age;
         this.email = email;
+        setCreatedAt(Dates.now());
+        setUpdatedAt(Dates.now());
     }
 
     public static User of(String name, String password, int age, String email) {
         return new User(name, password, age, email);
     }
+
 
     @Override
     public boolean equals(Object o) {

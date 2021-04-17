@@ -1,6 +1,7 @@
 package io.pine.cloud.service.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.pinenutt.easyddd.util.Dates;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -34,4 +35,9 @@ public class BaseEntity {
     @LastModifiedDate
     @Column(columnDefinition = "datetime not null default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '记录最后更新时间'")
     private Date updatedAt;
+
+    protected BaseEntity() {
+        setCreatedAt(Dates.now());
+        setUpdatedAt(Dates.now());
+    }
 }
