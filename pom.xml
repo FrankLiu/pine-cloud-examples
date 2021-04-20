@@ -29,8 +29,6 @@
 		<module>services/nodejs-service-sidecar</module>
 		<module>services/nodejs-service</module>
 		<module>services/user-service</module>
-		<module>services/payment-service</module>
-		<module>services/ecard-service</module>
 
 		<!-- apps -->
 		<module>apps/nodejs-bff</module>
